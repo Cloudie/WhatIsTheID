@@ -27,21 +27,17 @@ public class WhatIsTheID extends JavaPlugin{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(!(sender instanceof Player)){
+            System.out.println("You need to be in game to do that!");
+        }
+        
         Player player = (Player) sender;
         
         if(label.equalsIgnoreCase("id")){
-            if(player instanceof Player){
-                player.sendMessage("test");
-                int id =  player.getItemInHand().getTypeId();
-                Material mat = player.getItemInHand().getType();
-                player.sendMessage(ChatColor.RED + "[Item ID] Item ID is " + id + 
-                        " and it is " + mat + ".");
-                return true;
-            }
-            else{
-                System.out.println("You must be a player to do this!");
-                return false;
-            }
+            int id =  player.getItemInHand().getTypeId();
+            Material mat = player.getItemInHand().getType();
+            player.sendMessage(ChatColor.RED + "[Item ID] Item ID is " + id + " and it is " + mat + ".");
+            return true;
         }
         
         return false;

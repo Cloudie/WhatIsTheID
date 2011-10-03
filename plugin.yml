@@ -1,0 +1,9 @@
+name: WhatIsTheID
+main: whatistheid.WhatIsTheID
+version: 0.1
+commands:
+  id:
+    description: get the block or item id
+    usage: /id
+    
+    

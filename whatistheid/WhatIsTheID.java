@@ -29,6 +29,7 @@ public class WhatIsTheID extends JavaPlugin{
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!(sender instanceof Player)){
             System.out.println("You need to be in game to do that!");
+            return true;
         }
         
         Player player = (Player) sender;
